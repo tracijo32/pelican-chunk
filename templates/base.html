@@ -25,7 +25,7 @@
 		{% endblock head %}
 </head>
 
-<body class="home blog custom-background {% if SINGLE_AUTHOR %}single-author{% endif %}" >
+<body class="home blog custom-background {% if SINGLE_AUTHOR %}single-author{% endif %}{% if page is defined %} cvf-page{% endif %}" >
 	<div id="container">
 		<div id="header">
 				<h1 id="site-title"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
