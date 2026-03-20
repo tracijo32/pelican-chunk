@@ -19,7 +19,12 @@
 			<a href="{{ SITEURL }}/{{ article.url }}" title="Permalink to {{ article.title|striptags }}" rel="bookmark">{{ article.title }}</a>
 		</h2>
 		<div class="entry-content">
-			{{ article.content }}
+			{% if articles_page is defined %}
+				{{ article.summary }}
+				<p><a href="{{ SITEURL }}/{{ article.url }}">Read more…</a></p>
+			{% else %}
+				{{ article.content }}
+			{% endif %}
 		</div> <!--/#entry-content-->
 		{% if article.tags %}
     		<span class="tag-links"><strong>Tagged</strong>
